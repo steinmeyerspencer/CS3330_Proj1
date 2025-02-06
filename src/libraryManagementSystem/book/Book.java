@@ -31,9 +31,12 @@ public class Book {
 		this.price = price;
 	}
 	
-//	public Book(Book book) {
-//		this.title = 
-//	}
+	public Book(Book book) {
+		this.title = book.getTitle();
+		this.author = book.getAuthor();
+		this.ISBN = book.getISBN();
+		this.price = book.getPrice();
+	}
 	
 	
 	public String getTitle() {
