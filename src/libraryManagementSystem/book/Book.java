@@ -22,7 +22,7 @@ public class Book {
 	}
 	
 	/**
-	 * This is a parametrized constructor to set all attributes
+	 * This is a parameterized constructor to set all attributes
 	 */
 	public Book(String title, String author, String ISBN, double price) {
 		this.title = title;
@@ -30,5 +30,44 @@ public class Book {
 		this.ISBN = ISBN;
 		this.price = price;
 	}
+	
+//	public Book(Book book) {
+//		this.title = 
+//	}
+	
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getISBN() {
+		return ISBN;
+	}
+
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	
 	
 }
