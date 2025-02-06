@@ -21,4 +21,14 @@ public class Book {
 		this.price = 0.0;
 	}
 	
+	/**
+	 * This is a parametrized constructor to set all attributes
+	 */
+	public Book(String title, String author, String ISBN, double price) {
+		this.title = title;
+		this.author = author;
+		this.ISBN = ISBN;
+		this.price = price;
+	}
+	
 }
