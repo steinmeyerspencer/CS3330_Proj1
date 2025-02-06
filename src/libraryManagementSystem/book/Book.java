@@ -11,6 +11,14 @@ public class Book {
 	private String ISBN;
 	private double price;
 	
-	
+	/**
+	 * This is a constructor setting title, author, ISBN to "Unknown" and price to 0.0
+	 */
+	public Book() {
+		this.title = "Unknown";
+		this.author = "Unknown";
+		this.ISBN = "Unknown";
+		this.price = 0.0;
+	}
 	
 }
