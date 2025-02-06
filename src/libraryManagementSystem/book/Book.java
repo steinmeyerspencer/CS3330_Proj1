@@ -22,7 +22,11 @@ public class Book {
 	}
 	
 	/**
-	 * This is a parameterized constructor to set all attributes
+	 * This is a parameterized constructor for creating a book
+	 * @param title
+	 * @param author
+	 * @param ISBN
+	 * @param price
 	 */
 	public Book(String title, String author, String ISBN, double price) {
 		this.title = title;
@@ -30,7 +34,11 @@ public class Book {
 		this.ISBN = ISBN;
 		this.price = price;
 	}
-	
+
+	/**
+	 * Copy constructor. Takes parameters of Book type parameter and creates a new book with same parameters
+	 * @param book
+	 */
 	public Book(Book book) {
 		this.title = book.getTitle();
 		this.author = book.getAuthor();
@@ -38,6 +46,27 @@ public class Book {
 		this.price = book.getPrice();
 	}
 	
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", author=" + author + ", ISBN=" + ISBN + ", price=" + price + "]";
+	}
+	
+	/**
+	 * takes a book as a parameter, and checks if it has the same ISBN as the book that we are 
+	 * running the function on, if ISBN is equal, returns true. else, returns false
+	 * @param other
+	 * @return
+	 */
+	@Override
+	public boolean equals(Object other) {
+		Book book = (Book)other;
+		if (this.ISBN == book.getISBN()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 	public String getTitle() {
 		return title;
@@ -59,8 +88,8 @@ public class Book {
 		return ISBN;
 	}
 
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+	public void setISBN(String ISBN) {
+		this.ISBN = ISBN;
 	}
 
 	public double getPrice() {
