@@ -25,21 +25,21 @@ public class LibraryApp {
 		
 		// SEARCH FOR A BOOK BY ISBN
 		
-		System.out.println(library.searchByISBN("1.0"));
+		System.out.println();
+		library.searchByISBN("1.0");
 		
 		// REMOVE BOOK THAT EXISTS
-		System.out.println("\nRemoving Book");
+		System.out.println();
 		library.displayBooks();
 		library.removeBook(catinthehat);
 		
+		System.out.println();
 		library.displayBooks();
 		
 		// REMOVE BOOK THAT DOESN'T EXIST
-		System.out.println("\nRemoving Book That Doesn't Exist");
+		System.out.println();
 		library.removeBook(catinthehat);
-		
-		library.displayBooks();
-		
+				
 	}
 
 }
