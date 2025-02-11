@@ -28,7 +28,11 @@ public class Library {
 	 * @return
 	 */
 	public boolean addBook(Book book) {
-		System.out.println("Adding books...");
+		if (count == 5) {
+			System.out.println("Library is full");
+			return false;
+		}
+		System.out.println("Adding book...");
 		for(int i = 0; i < books.length - 1; i++) {
 			if(books[i] == null) {
 				books[i] = book;
