@@ -1,28 +1,28 @@
 package libraryManagementSystem;
 
 import libraryManagementSystem.book.Book;
+import libraryManagementSystem.library.Library;
 
 public class LibraryApp {
 
 	public static void main(String[] args) {
 		
-		Book harryPotter = new Book("Harry Potter", "JK Rowling", "1", 20.0);
+		Library library = new Library(0);
 		
-		System.out.println("Book title: " + harryPotter.getTitle());
+		Book harrypotter = new Book("Harry Potter", "JK Rowling", "1.0", 30.0);
 		
-//		Book lordOfTheRings = new Book("Lord of the Rings", "Tolkien", "1", 30.0);
+		library.addBook(harrypotter);
 		
-		Book harryPotter2 = new Book(harryPotter);
+		Book lordoftherings = new Book("Lord of the Rings", "Tolkien", "2.0", 35.0);
 		
-		System.out.println(harryPotter.toString());
+		library.addBook(lordoftherings);
+		
+		Book catinthehat = new Book("Cat in the Hat", "Dr. Suess", "2.0", 36.0);
+		
+		library.addBook(catinthehat);
 		
 		
-		if(harryPotter.equals(harryPotter2)) {
-			System.out.println("You have two same books.");
-		}
-		else {
-			System.out.println("You messed up");
-		}
+		
 		
 	}
 
