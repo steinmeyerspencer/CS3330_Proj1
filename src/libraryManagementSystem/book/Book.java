@@ -48,7 +48,8 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + ", ISBN=" + ISBN + ", price=" + price + "]";
+		return title + " by " + author +  " (ISBN: " + ISBN + ", $" + price + ")";
+		//return "Book [title=" + title + ", author=" + author + ", ISBN=" + ISBN + ", price=" + price + "]";
 	}
 	
 	/**
@@ -59,6 +60,9 @@ public class Book {
 	 */
 	@Override
 	public boolean equals(Object other) {
+		if (other == null) {
+			return false;
+		}
 		Book book = (Book)other;
 		if (this.ISBN == book.getISBN()) {
 			return true;

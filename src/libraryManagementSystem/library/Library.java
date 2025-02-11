@@ -15,9 +15,9 @@ public class Library {
 	 * creating the class constructor with books fixed at 5
 	 * @param count
 	 */
-	public Library(int count) {
+	public Library() {
 		this.books = new Book[5];
-		this.count = count;
+		this.count = 0;
 	}
 	
 	
@@ -31,10 +31,12 @@ public class Library {
 		for(int i = 0; i < books.length - 1; i++) {
 			if(books[i] == null) {
 				books[i] = book;
+				count++;
 				return true;
 			}
 			
 		}
+		System.out.println("Library is full");
 		return false;
 	}
 	
@@ -46,13 +48,20 @@ public class Library {
 	 */
 	public boolean removeBook(Book book) {
 		for(int i = 0; i < books.length - 1; i++) {
-			if(books[i].getISBN() == books[i].getISBN()) {
+			if (book == null) {
+				return false;
+			}
+			if(book.equals(books[i])) {
+				System.out.println("Removing book: " + books[i]);
 				books[i] = null;
-				System.out.println("Book has been removed.");
+				count--;
 				return true;
 			}
+			else {
+				System.out.println("Searching...");
+			}
 		}
-		System.out.println("Book could not be found.");
+		System.out.println("Cannot remove book '" + book + "'");
 		return false;
 	}
 	
@@ -64,10 +73,10 @@ public class Library {
 	 * @param book
 	 * @return
 	 */
-	public Book searchByISBN(Book book) {
+	public Book searchByISBN(String ISBN) {
 		for(int i = 0; i < books.length - 1; i++) {
-			if(books[i].getISBN() == book.getISBN()) {
-				return book;
+			if(books[i].getISBN() == ISBN) {
+				return books[i];
 			}
 		}
 		return null;
@@ -79,9 +88,10 @@ public class Library {
 	 * Method that prints the information of all the books in books[]
 	 */
 	public void displayBooks() {
+		System.out.println("All books in the library: ");
 		for(int i = 0; i < books.length - 1; i++) {
 			if(books[i] != null) {
-				System.out.println(books[i].toString());
+				System.out.println((i+1) + ". " + books[i].toString());
 			}
 		}
 	}
